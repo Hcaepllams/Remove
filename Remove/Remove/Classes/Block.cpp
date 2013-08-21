@@ -7,11 +7,8 @@
 //
 
 #include "Block.h"
+#include "Constants.h"
 
-#define BLOCK_WIDTH 10
-#define BLOCK_HEIGHT 10
-#define GAP_X 2
-#define GAP_Y 2
 ///////////////////////////
 
 Block::Block()
@@ -35,6 +32,7 @@ bool Block::init(int x, int y, enumBlockType type)
     }
     
     this->setContentSize(CCSizeMake(BLOCK_WIDTH, BLOCK_HEIGHT));
+    this->setOpacity(255);
     
     this->setX(x);
     this->setY(y);
@@ -66,9 +64,12 @@ Block* Block::create(int x, int y, enumBlockType type)
 void Block::updateView()
 {
     ccColor3B color = ccWHITE;
-    
+    this->setVisible(true);
     switch (m_eBlockType)
     {
+        case m_BlockTypeEmpty:
+            this->setVisible(false);
+            break;
         case m_BlockTypeColor1:
             color = ccWHITE;
             break;

@@ -1,6 +1,7 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
 #include "Map.h"
+#include "GameLogic.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
@@ -32,6 +33,8 @@ bool HelloWorld::init()
 
     Map *map = Map::create();
     this->addChild(map);
-        
+    
+    GameLogic::sharedInstance()->setMap(map);
+    
     return true;
 }

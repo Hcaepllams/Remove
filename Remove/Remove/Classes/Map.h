@@ -17,12 +17,6 @@
 USING_NS_CC;
 USING_NS_CC_EXT;
 
-
-
-extern const int MAP_WIDTH;
-extern const int MAP_HEIGHT;
-
-
 class Map: public CCLayer
 {
 public:
@@ -38,8 +32,16 @@ public:
     
     void updateMap();
     
+    void removeBlocks(CCArray *blocks);
+    
+    virtual void registerWithTouchDispatcher(void);
+    
+    virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
+
 private:
-    CCArray* m_pXArray; //An array contains all Y list 
+    CCArray* m_pXArray; //An array contains all Y list
+    void compressTheMap();
+    void fullFillMap(int removedBlockCount);
 };
 
 #endif /* defined(__Remove__Map__) */

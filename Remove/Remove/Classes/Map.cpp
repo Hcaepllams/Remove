@@ -7,11 +7,9 @@
 //
 
 #include "Map.h"
-#define _MAP_WIDTH 10
-#define _MAP_HEIGHT 10
+#include "Constants.h"
+#include "GameLogic.h"
 
-const int MAP_WIDTH = _MAP_WIDTH;
-const int MAP_HEIGHT = _MAP_HEIGHT;
 
 Map::Map()
 :m_pXArray(NULL)
@@ -30,6 +28,8 @@ bool Map::init()
     {
         return false;
     }
+    
+    this->setTouchEnabled(true);
     
     m_pXArray = CCArray::create();
     m_pXArray->retain();
@@ -84,4 +84,101 @@ void Map::updateMap()
             }
         }
     }
+}
+
+void Map::registerWithTouchDispatcher()
+{
+    CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
+}
+
+bool Map::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
+{
+    CCPoint point = pTouch->getLocation();
+    
+    if (point.x >= (MAP_WIDTH * (BLOCK_WIDTH + GAP_X) - GAP_X) ||
+        point.y >= (MAP_HEIGHT * (BLOCK_HEIGHT + GAP_Y) - GAP_Y))
+    {
+        return false;
+    }
+    
+    int x = point.x / (BLOCK_WIDTH + GAP_X);
+    if ((int)point.x % (BLOCK_WIDTH + GAP_X) > BLOCK_WIDTH)
+    {
+        return false;
+    }
+    
+    int y = point.y / (BLOCK_HEIGHT + GAP_Y);
+    if ((int)point.y % (BLOCK_HEIGHT + GAP_Y) > BLOCK_HEIGHT)
+    {
+        return false;
+    }
+    
+    GameLogic::sharedInstance()->onBlockTouched(x, y);
+    
+    return true;
+}
+
+void Map::removeBlocks(cocos2d::CCArray *blocks)
+{
+    CCObject *pObj = NULL;
+    CCARRAY_FOREACH(blocks, pObj)
+    {
+        Block *block = (Block*)pObj;
+        block->setBlockType(m_BlockTypeEmpty);
+        block->updateView();
+    }
+    this->compressTheMap();
+    this->fullFillMap(0);
+}
+
+void Map::compressTheMap()
+{
+    CCObject *pObjArray = NULL;
+    CCARRAY_FOREACH(m_pXArray, pObjArray)
+    {
+        CCArray *pYArray = (CCArray*) pObjArray;
+        for (int y = 0; y < pYArray->count(); y ++)
+        {
+            Block *block = (Block*)pYArray->objectAtIndex(y);
+            if (block->getBlockType() == m_BlockTypeEmpty)
+            {
+                //Exchange the empty to the nearest block with color
+                for (int tmp = y + 1; tmp < pYArray->count(); tmp ++)
+                {
+                    Block *targetBlock = (Block*)pYArray->objectAtIndex(tmp);
+                    if (targetBlock->getBlockType() != m_BlockTypeEmpty)
+                    {
+                        // Find it! Now exchange them;
+                        block->setBlockType(targetBlock->getBlockType());
+                        targetBlock->setBlockType(m_BlockTypeEmpty);
+                        break;
+                    }
+                    // Else continue finding.
+                }
+            }
+            // Else do nothing.
+        }
+    }
+}
+
+void Map::fullFillMap(int removedBlockCount)
+{
+    CCObject *pObjArray = NULL;
+       
+    // Now fill the empty block with a new color
+    CCARRAY_FOREACH(m_pXArray, pObjArray)
+    {
+        CCArray *pYArray = (CCArray*) pObjArray;
+        CCObject *pObjBlock = NULL;
+        CCARRAY_FOREACH(pYArray, pObjBlock)
+        {
+            Block *block = (Block*)pObjBlock;
+            if (block->getBlockType() == m_BlockTypeEmpty)
+            {
+                int color = CCRANDOM_0_1() * 10 / 2 + 1;
+                block->setBlockType((enumBlockType) color);
+            }
+        }
+    }
+    this->updateMap();
 }

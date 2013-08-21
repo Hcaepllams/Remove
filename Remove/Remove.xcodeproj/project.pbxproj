@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F3DCE0517C4F22900A6D8FF /* GameLogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DCE0317C4F22800A6D8FF /* GameLogic.cpp */; };
+		2F3DCE0A17C4F92C00A6D8FF /* Constants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DCE0817C4F92C00A6D8FF /* Constants.cpp */; };
 		BE996B9017C4C0600043BF95 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE996B8F17C4C0600043BF95 /* QuartzCore.framework */; };
 		BE996B9217C4C0600043BF95 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE996B9117C4C0600043BF95 /* OpenGLES.framework */; };
 		BE996B9417C4C0600043BF95 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE996B9317C4C0600043BF95 /* OpenAL.framework */; };
@@ -207,6 +209,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F3DCE0317C4F22800A6D8FF /* GameLogic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameLogic.cpp; path = Classes/GameLogic.cpp; sourceTree = "<group>"; };
+		2F3DCE0417C4F22900A6D8FF /* GameLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogic.h; path = Classes/GameLogic.h; sourceTree = "<group>"; };
+		2F3DCE0817C4F92C00A6D8FF /* Constants.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Constants.cpp; path = Classes/Constants.cpp; sourceTree = "<group>"; };
+		2F3DCE0917C4F92C00A6D8FF /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Classes/Constants.h; sourceTree = "<group>"; };
 		BE996B8C17C4C0600043BF95 /* Remove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE996B8F17C4C0600043BF95 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BE996B9117C4C0600043BF95 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1529,6 +1535,10 @@
 				BE996E3017C4C0710043BF95 /* HelloWorldScene.cpp */,
 				BE996E3A17C4C4260043BF95 /* Map.cpp */,
 				BE996E3B17C4C4260043BF95 /* Map.h */,
+				2F3DCE0317C4F22800A6D8FF /* GameLogic.cpp */,
+				2F3DCE0417C4F22900A6D8FF /* GameLogic.h */,
+				2F3DCE0817C4F92C00A6D8FF /* Constants.cpp */,
+				2F3DCE0917C4F92C00A6D8FF /* Constants.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1781,6 +1791,8 @@
 				BE996E3117C4C0710043BF95 /* HelloWorldScene.cpp in Sources */,
 				BE996E3917C4C1A10043BF95 /* Block.cpp in Sources */,
 				BE996E3C17C4C4270043BF95 /* Map.cpp in Sources */,
+				2F3DCE0517C4F22900A6D8FF /* GameLogic.cpp in Sources */,
+				2F3DCE0A17C4F92C00A6D8FF /* Constants.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1912,6 +1924,7 @@
 				BE996E3617C4C0710043BF95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
