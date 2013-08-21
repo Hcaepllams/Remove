@@ -37,6 +37,10 @@ public:
     virtual void registerWithTouchDispatcher(void);
     
     virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
+    
+    CCArray* findNearbyBlocks(int x, int y, Block *targetBlock);
+    
+    void refreshMapTouchedStatus();
 
 private:
     CCArray* m_pXArray; //An array contains all Y list

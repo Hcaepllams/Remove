@@ -42,6 +42,8 @@ public:
     
     CC_SYNTHESIZE(enumBlockType, m_eBlockType, BlockType);
     
+    CC_SYNTHESIZE(bool, m_bTouched, Touched);// this value is used in removed alogrithm.
+    
     void updateView();
 };
 

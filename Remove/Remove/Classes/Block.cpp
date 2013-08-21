@@ -15,6 +15,7 @@ Block::Block()
 :m_iX(0)
 ,m_iY(0)
 ,m_eBlockType(m_BlockTypeEmpty)
+,m_bTouched(false)
 {
     
 }

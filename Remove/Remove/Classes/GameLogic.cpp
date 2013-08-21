@@ -41,7 +41,12 @@ void GameLogic::onBlockTouched(int x, int y)
 {
     Block *block = this->getMap()->getBlockByPosition(x, y);
     CCArray *blocksNeedToBeRemoved = CCArray::create();
-    blocksNeedToBeRemoved->addObject(block);
+    blocksNeedToBeRemoved = this->getMap()->findNearbyBlocks(x, y, block);
     
-    this->getMap()->removeBlocks(blocksNeedToBeRemoved);
+    if (blocksNeedToBeRemoved->count() > 2)
+    {
+        this->getMap()->removeBlocks(blocksNeedToBeRemoved);
+    }
+    
+    this->getMap()->refreshMapTouchedStatus();
 }

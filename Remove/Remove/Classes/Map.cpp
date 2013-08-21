@@ -86,6 +86,21 @@ void Map::updateMap()
     }
 }
 
+void Map::refreshMapTouchedStatus()
+{
+    for (int x = 0; x < MAP_WIDTH; x ++)
+    {
+        for (int y = 0; y < MAP_HEIGHT; y ++)
+        {
+            Block* block = this->getBlockByPosition(x, y);
+            if (block != NULL)
+            {
+                block->setTouched(false);
+            }
+        }
+    }
+}
+
 void Map::registerWithTouchDispatcher()
 {
     CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
@@ -181,4 +196,47 @@ void Map::fullFillMap(int removedBlockCount)
         }
     }
     this->updateMap();
+}
+
+CCArray *Map::findNearbyBlocks(int x, int y, Block *targetBlock)
+{
+    CCArray *returnArray = CCArray::create();
+    Block *block = this->getBlockByPosition(x, y);
+    if (block->getTouched() == true)
+    {
+        return returnArray;
+    }
+    
+    block->setTouched(true);
+    
+    if (block->getBlockType() == targetBlock->getBlockType())
+    {
+        returnArray->addObject(block);
+        
+        if (x + 1 < MAP_WIDTH)
+        {
+            returnArray->addObjectsFromArray(findNearbyBlocks(x + 1, y, targetBlock));
+        }
+        
+        if (x - 1 >= 0)
+        {
+            returnArray->addObjectsFromArray(findNearbyBlocks(x - 1, y, targetBlock));
+        }
+        
+        if (y + 1 < MAP_HEIGHT)
+        {
+            returnArray->addObjectsFromArray(findNearbyBlocks(x, y + 1, targetBlock));
+        }
+        
+        if (y - 1 >= 0)
+        {
+            returnArray->addObjectsFromArray(findNearbyBlocks(x, y - 1, targetBlock));
+        }
+    }
+    
+    
+    
+    
+    
+    return returnArray;
 }
