@@ -202,6 +202,8 @@
 		BE996E2517C4C0700043BF95 /* HttpClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE996E2417C4C0700043BF95 /* HttpClient.cpp */; };
 		BE996E2E17C4C0700043BF95 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE996E2D17C4C0700043BF95 /* AppDelegate.cpp */; };
 		BE996E3117C4C0710043BF95 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE996E3017C4C0710043BF95 /* HelloWorldScene.cpp */; };
+		BE996E3917C4C1A10043BF95 /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE996E3717C4C1A10043BF95 /* Block.cpp */; };
+		BE996E3C17C4C4270043BF95 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE996E3A17C4C4260043BF95 /* Map.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -634,6 +636,10 @@
 		BE996E2D17C4C0700043BF95 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		BE996E2F17C4C0700043BF95 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		BE996E3017C4C0710043BF95 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
+		BE996E3717C4C1A10043BF95 /* Block.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Block.cpp; path = Classes/Block.cpp; sourceTree = "<group>"; };
+		BE996E3817C4C1A10043BF95 /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Block.h; path = Classes/Block.h; sourceTree = "<group>"; };
+		BE996E3A17C4C4260043BF95 /* Map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Map.cpp; path = Classes/Map.cpp; sourceTree = "<group>"; };
+		BE996E3B17C4C4260043BF95 /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Map.h; path = Classes/Map.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1515,10 +1521,14 @@
 		BE996E2B17C4C0700043BF95 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BE996E3717C4C1A10043BF95 /* Block.cpp */,
+				BE996E3817C4C1A10043BF95 /* Block.h */,
 				BE996E2C17C4C0700043BF95 /* AppDelegate.h */,
 				BE996E2D17C4C0700043BF95 /* AppDelegate.cpp */,
 				BE996E2F17C4C0700043BF95 /* HelloWorldScene.h */,
 				BE996E3017C4C0710043BF95 /* HelloWorldScene.cpp */,
+				BE996E3A17C4C4260043BF95 /* Map.cpp */,
+				BE996E3B17C4C4260043BF95 /* Map.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1769,6 +1779,8 @@
 				BE996E2517C4C0700043BF95 /* HttpClient.cpp in Sources */,
 				BE996E2E17C4C0700043BF95 /* AppDelegate.cpp in Sources */,
 				BE996E3117C4C0710043BF95 /* HelloWorldScene.cpp in Sources */,
+				BE996E3917C4C1A10043BF95 /* Block.cpp in Sources */,
+				BE996E3C17C4C4270043BF95 /* Map.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
