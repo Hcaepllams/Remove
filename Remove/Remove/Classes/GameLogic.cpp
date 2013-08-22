@@ -7,6 +7,8 @@
 //
 
 #include "GameLogic.h"
+#include "Constants.h"
+
 static GameLogic* m_pSharedInstance = NULL;
 
 GameLogic *GameLogic::sharedInstance()
@@ -42,33 +44,17 @@ void GameLogic::onBlockTouched(int x, int y)
     Block *block = this->getMap()->getBlockByPosition(x, y);
     CCArray *blocksNeedToBeRemoved = CCArray::create();
     
-    if (block->getPowerup() != NULL)
-    {
-        // the user clicked the block with a powerup.
-        // So lets assume this block a color and find the longest steak.
-        
-        for (int i = 1; i <= 5; i ++)
-        {
-            block->setBlockType((enumBlockType)i);
-            CCArray *tmpArray = this->getMap()->findNearbyBlocks(x, y, block);
-            if (blocksNeedToBeRemoved->count() <= tmpArray->count())
-            {
-                blocksNeedToBeRemoved = tmpArray;
-            }
-            this->getMap()->refreshMapTouchedStatus();
-        }
-        // set status back.
-        block->setBlockType(m_BlockTypePowerup);
-    }
-    else
-    {
-        blocksNeedToBeRemoved = this->getMap()->findNearbyBlocks(x, y, block);
-    }
+    blocksNeedToBeRemoved = this->getMap()->findLongestStreak(block);
     
-    if (blocksNeedToBeRemoved->count() > 2)
+    if (blocksNeedToBeRemoved->count() >= MIN_SCORE_STREAK)
     {
         this->getMap()->removeBlocks(blocksNeedToBeRemoved);
     }
     
     this->getMap()->refreshMapTouchedStatus();
+    
+    if (!this->getMap()->checkMapAvilableStatus())
+    {
+        this->getMap()->shuffleMap();
+    }
 }

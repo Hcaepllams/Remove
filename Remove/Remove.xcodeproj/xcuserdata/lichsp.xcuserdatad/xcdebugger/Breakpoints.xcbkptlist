@@ -21,24 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Remove/Classes/GameLogic.cpp"
-         timestampString = "398832704.614601"
+         timestampString = "398834943.031336"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "45"
-         endingLineNumber = "45"
-         landmarkName = "GameLogic::onBlockTouched(int x, int y)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Remove/Classes/GameLogic.cpp"
-         timestampString = "398832761.13251"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "52"
-         endingLineNumber = "52"
+         startingLineNumber = "47"
+         endingLineNumber = "47"
          landmarkName = "GameLogic::onBlockTouched(int x, int y)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -53,6 +40,19 @@
          startingLineNumber = "207"
          endingLineNumber = "207"
          landmarkName = "Map::fullFillMap(int removedBlockCount)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Remove/Classes/Map.cpp"
+         timestampString = "398835813.291889"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "341"
+         endingLineNumber = "341"
+         landmarkName = "Map::shuffleMap()"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

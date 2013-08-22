@@ -236,6 +236,36 @@ void Map::fullFillMap(int removedBlockCount)
     this->updateMap();
 }
 
+CCArray *Map::findLongestStreak(Block *block)
+{
+    CCArray *returnArray = CCArray::create();
+    
+    if (block->getPowerup() != NULL)
+    {
+        // the user clicked the block with a powerup.
+        // So lets assume this block a color and find the longest streak.
+        
+        for (int i = 1; i <= 5; i ++)
+        {
+            block->setBlockType((enumBlockType)i);
+            CCArray *tmpArray = this->findNearbyBlocks(block->getX(), block->getY(), block);
+            if (returnArray->count() <= tmpArray->count())
+            {
+                returnArray = tmpArray;
+            }
+            this->refreshMapTouchedStatus();
+        }
+        // set status back.
+        block->setBlockType(m_BlockTypePowerup);
+    }
+    else
+    {
+        returnArray = this->findNearbyBlocks(block->getX(), block->getY(), block);
+    }
+    
+    return returnArray;
+}
+
 CCArray *Map::findNearbyBlocks(int x, int y, Block *targetBlock)
 {
     CCArray *returnArray = CCArray::create();
@@ -272,10 +302,62 @@ CCArray *Map::findNearbyBlocks(int x, int y, Block *targetBlock)
             returnArray->addObjectsFromArray(findNearbyBlocks(x, y - 1, targetBlock));
         }
     }
-    
-    
-    
-    
-    
     return returnArray;
+}
+
+bool Map::checkMapAvilableStatus()
+{   
+    for (int x = 0; x < MAP_WIDTH; x ++)
+    {
+        for (int y = 0; y < MAP_HEIGHT; y ++)
+        {
+            Block* block = this->getBlockByPosition(x, y);
+            if (block != NULL)
+            {
+                if (this->findLongestStreak(block)->count() >= MIN_SCORE_STREAK)
+                {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
+void Map::shuffleMap()
+{
+    for (int x = 0; x < MAP_WIDTH / 2; x ++)
+    {
+        for (int y = 0; y < MAP_HEIGHT / 2; y ++)
+        {
+            int targetX = (int)(CCRANDOM_0_1() * MAP_WIDTH);
+            int targetY = (int)(CCRANDOM_0_1() * MAP_HEIGHT);
+            Block *block0 = this->getBlockByPosition(x, y);
+            Block *block1 = this->getBlockByPosition(targetX, targetY);
+            this->exchangeBlocks(block0, block1);
+        }
+    }
+    
+    this->updateMap();
+    
+    if (!this->checkMapAvilableStatus())
+    {
+        this->shuffleMap();
+    }
+    else
+    {
+        return;
+    }
+}
+
+void Map::exchangeBlocks(Block *block0, Block *block1)
+{
+    Block *tmpBlock = Block::create(block1->getX(), block1->getY(), block1->getBlockType());
+    tmpBlock->setPowerup(block1->getPowerup());
+    
+    block1->setBlockType(block0->getBlockType());
+    block1->setPowerup(block0->getPowerup());
+    
+    block0->setBlockType(tmpBlock->getBlockType());
+    block0->setPowerup(tmpBlock->getPowerup());
 }

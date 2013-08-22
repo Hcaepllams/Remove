@@ -17,5 +17,6 @@ extern const int BLOCK_WIDTH;
 extern const int BLOCK_HEIGHT;
 extern const int GAP_X;
 extern const int GAP_Y;
+extern const int MIN_SCORE_STREAK;
 
 #endif /* defined(__Remove__Constants__) */

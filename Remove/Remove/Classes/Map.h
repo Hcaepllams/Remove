@@ -38,10 +38,19 @@ public:
     
     virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
     
-    CCArray* findNearbyBlocks(int x, int y, Block *targetBlock);
+    CCArray* findLongestStreak(Block *block);
     
     void refreshMapTouchedStatus();
+    
+    bool checkMapAvilableStatus();
+    
+    void shuffleMap();
+    
+    void exchangeBlocks(Block *block0, Block *block1);
+    
 private:
+    
+    CCArray* findNearbyBlocks(int x, int y, Block *targetBlock);
     CCArray* m_pXArray; //An array contains all Y list
     void compressTheMap();
     void fullFillMap(int removedBlockCount);

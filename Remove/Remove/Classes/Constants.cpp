@@ -15,6 +15,7 @@
 #define _BLOCK_HEIGHT 50
 #define _GAP_X 10
 #define _GAP_Y 10
+#define _MIN_SCORE_STREAK 3
 
 const int MAP_WIDTH = _MAP_WIDTH;
 const int MAP_HEIGHT = _MAP_HEIGHT;
@@ -24,4 +25,6 @@ const int BLOCK_HEIGHT = _BLOCK_HEIGHT;
 
 const int GAP_X = _GAP_X;
 const int GAP_Y = _GAP_Y;
+
+const int MIN_SCORE_STREAK = _MIN_SCORE_STREAK;
 
