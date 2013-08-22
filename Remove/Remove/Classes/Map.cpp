@@ -34,6 +34,8 @@ bool Map::init()
     
     this->setTouchEnabled(true);
     
+    CC_SAFE_RELEASE_NULL(m_pXArray);
+    
     m_pXArray = CCArray::create();
     m_pXArray->retain();
     
@@ -106,7 +108,7 @@ void Map::refreshMapTouchedStatus()
 
 void Map::registerWithTouchDispatcher()
 {
-    CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
+    CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 1, true);
 }
 
 bool Map::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
@@ -168,8 +170,7 @@ void Map::compressTheMap()
                     if (targetBlock->getBlockType() != m_BlockTypeEmpty)
                     {
                         // Find it! Now exchange them;
-                        block->setBlockType(targetBlock->getBlockType());
-                        targetBlock->setBlockType(m_BlockTypeEmpty);
+                        this->exchangeBlocks(block, targetBlock);
                         break;
                     }
                     // Else continue finding.
@@ -207,7 +208,6 @@ void Map::fullFillMap(int removedBlockCount)
             randomPosition.x = (int)(CCRANDOM_0_1() * MAP_WIDTH);
             randomPosition.y = (int)(CCRANDOM_0_1() * MAP_HEIGHT);
         } while (this->getBlockByPosition(randomPosition.x, randomPosition.y)->getPowerup() != NULL);
-        
     }
     
     if (removedBlockCount >= 5 && removedBlockCount < 8)
@@ -339,6 +339,8 @@ void Map::shuffleMap()
     }
     
     this->updateMap();
+    
+    this->refreshMapTouchedStatus();
     
     if (!this->checkMapAvilableStatus())
     {

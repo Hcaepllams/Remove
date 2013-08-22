@@ -29,10 +29,14 @@ public:
     
     void onBlockTouched(int x, int y);
     
+    void restartGame();
+    
 protected:
     int m_iScore;
 
     CC_SYNTHESIZE_RETAIN(Map*, m_pMap, Map);
+    CC_SYNTHESIZE_RETAIN(CCLabelTTF*, m_pScoreLabel, ScoreLabel)
+    CC_SYNTHESIZE_RETAIN(CCMenuItem*, m_pRestartButton, RestartButton);
 };
 
 #endif /* defined(__Remove__GameLogic__) */

@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Remove/Classes/Map.cpp"
-         timestampString = "398832284.293152"
+         timestampString = "398844518.348279"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "46"
-         endingLineNumber = "46"
+         startingLineNumber = "48"
+         endingLineNumber = "48"
          landmarkName = "Map::init()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -20,25 +20,12 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Remove/Classes/GameLogic.cpp"
-         timestampString = "398834943.031336"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "47"
-         endingLineNumber = "47"
-         landmarkName = "GameLogic::onBlockTouched(int x, int y)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "Remove/Classes/Map.cpp"
-         timestampString = "398833055.636332"
+         timestampString = "398845526.85937"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "207"
-         endingLineNumber = "207"
+         startingLineNumber = "208"
+         endingLineNumber = "208"
          landmarkName = "Map::fullFillMap(int removedBlockCount)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -46,13 +33,26 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Remove/Classes/Map.cpp"
-         timestampString = "398835813.291889"
+         filePath = "Remove/libs/cocos2dx/touch_dispatcher/CCTouchDispatcher.cpp"
+         timestampString = "398845048.031232"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "341"
-         endingLineNumber = "341"
-         landmarkName = "Map::shuffleMap()"
+         startingLineNumber = "343"
+         endingLineNumber = "343"
+         landmarkName = "CCTouchDispatcher::touches(CCSet *pTouches, CCEvent *pEvent, unsigned int uIndex)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Remove/libs/cocos2dx/menu_nodes/CCMenuItem.cpp"
+         timestampString = "398845117.690599"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "115"
+         endingLineNumber = "115"
+         landmarkName = "CCMenuItem::activate()"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

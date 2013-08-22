@@ -16,6 +16,7 @@
 #define _GAP_X 10
 #define _GAP_Y 10
 #define _MIN_SCORE_STREAK 3
+#define _END_GAME_SCORE_CAP 100
 
 const int MAP_WIDTH = _MAP_WIDTH;
 const int MAP_HEIGHT = _MAP_HEIGHT;
@@ -27,4 +28,6 @@ const int GAP_X = _GAP_X;
 const int GAP_Y = _GAP_Y;
 
 const int MIN_SCORE_STREAK = _MIN_SCORE_STREAK;
+
+const int END_GAME_SCORE_CAP = _END_GAME_SCORE_CAP;
 
