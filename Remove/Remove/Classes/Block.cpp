@@ -105,4 +105,9 @@ void Block::updateView()
     }
     
     this->setColor(color);
+    
+    if (!this->getPosition().equals(ccp(this->getX() * (BLOCK_WIDTH + GAP_X), this->getY() * (BLOCK_HEIGHT + GAP_Y))))
+    {
+        this->runAction(CCMoveTo::create(MOVE_ANIM_DURATION, ccp(this->getX() * (BLOCK_WIDTH + GAP_X), this->getY() * (BLOCK_HEIGHT + GAP_Y))));
+    }
 }

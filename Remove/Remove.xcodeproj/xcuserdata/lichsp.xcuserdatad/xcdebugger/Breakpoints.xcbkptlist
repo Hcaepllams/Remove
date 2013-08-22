@@ -8,25 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Remove/Classes/Map.cpp"
-         timestampString = "398844518.348279"
+         timestampString = "398852163.025805"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "48"
-         endingLineNumber = "48"
+         startingLineNumber = "50"
+         endingLineNumber = "50"
          landmarkName = "Map::init()"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Remove/Classes/Map.cpp"
-         timestampString = "398845526.85937"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "208"
-         endingLineNumber = "208"
-         landmarkName = "Map::fullFillMap(int removedBlockCount)"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -53,6 +40,84 @@
          startingLineNumber = "115"
          endingLineNumber = "115"
          landmarkName = "CCMenuItem::activate()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Remove/Classes/Map.cpp"
+         timestampString = "398852163.025805"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "156"
+         endingLineNumber = "156"
+         landmarkName = "Map::removeBlocks(cocos2d::CCArray *blocks)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Remove/Classes/Map.cpp"
+         timestampString = "398852163.025805"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "266"
+         endingLineNumber = "266"
+         landmarkName = "Map::fullFillMap(int removedBlockCount)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Remove/Classes/Map.cpp"
+         timestampString = "398852163.025805"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "267"
+         endingLineNumber = "267"
+         landmarkName = "Map::fullFillMap(int removedBlockCount)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Remove/Classes/Block.cpp"
+         timestampString = "398850384.348416"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "45"
+         endingLineNumber = "45"
+         landmarkName = "Block::init(int x, int y, enumBlockType type)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Remove/Classes/Map.cpp"
+         timestampString = "398852163.025805"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "277"
+         endingLineNumber = "277"
+         landmarkName = "Map::fullFillMap(int removedBlockCount)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Remove/Classes/Map.cpp"
+         timestampString = "398852163.025805"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "292"
+         endingLineNumber = "292"
+         landmarkName = "Map::addPowerups(int removedBlockCount)"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

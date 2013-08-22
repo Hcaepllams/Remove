@@ -80,6 +80,8 @@ void GameLogic::onBlockTouched(int x, int y)
 
 void GameLogic::restartGame()
 {
+    
+    
     this->getMap()->init();
     this->getMap()->updateMap();
     m_iScore = 0;

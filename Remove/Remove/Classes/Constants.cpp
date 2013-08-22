@@ -17,6 +17,7 @@
 #define _GAP_Y 10
 #define _MIN_SCORE_STREAK 3
 #define _END_GAME_SCORE_CAP 100
+#define _MOVE_ANIM_DURATION 0.2f
 
 const int MAP_WIDTH = _MAP_WIDTH;
 const int MAP_HEIGHT = _MAP_HEIGHT;
@@ -30,4 +31,4 @@ const int GAP_Y = _GAP_Y;
 const int MIN_SCORE_STREAK = _MIN_SCORE_STREAK;
 
 const int END_GAME_SCORE_CAP = _END_GAME_SCORE_CAP;
-
+const float MOVE_ANIM_DURATION = _MOVE_ANIM_DURATION;

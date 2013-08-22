@@ -54,6 +54,7 @@ private:
     CCArray* m_pXArray; //An array contains all Y list
     void compressTheMap();
     void fullFillMap(int removedBlockCount);
+    void addPowerups(int removedBlockCount);
 };
 
 #endif /* defined(__Remove__Map__) */
