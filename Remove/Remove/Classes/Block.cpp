@@ -16,13 +16,16 @@ Block::Block()
 ,m_iY(0)
 ,m_eBlockType(m_BlockTypeEmpty)
 ,m_bTouched(false)
+,m_pPowerupLabel(NULL)
+,m_pPowerup(NULL)
 {
     
 }
 
 Block::~Block()
 {
-    
+    CC_SAFE_RELEASE_NULL(m_pPowerupLabel);
+    CC_SAFE_RELEASE_NULL(m_pPowerup);
 }
 
 bool Block::init(int x, int y, enumBlockType type)
@@ -40,6 +43,10 @@ bool Block::init(int x, int y, enumBlockType type)
     this->setBlockType(type);
     
     this->setPosition(ccp(x * (BLOCK_WIDTH + GAP_X), y * (BLOCK_HEIGHT + GAP_Y)));
+    
+    this->setPowerupLabel(CCLabelTTF::create("", "Helvetica", 24));
+    this->addChild(m_pPowerupLabel);
+    this->getPowerupLabel()->setPosition(ccp(this->getContentSize().width / 2, this->getContentSize().height / 2));
     
     this->updateView();
     
@@ -66,6 +73,7 @@ void Block::updateView()
 {
     ccColor3B color = ccWHITE;
     this->setVisible(true);
+    m_pPowerupLabel->setString("");
     switch (m_eBlockType)
     {
         case m_BlockTypeEmpty:
@@ -90,5 +98,11 @@ void Block::updateView()
             color = ccGRAY;
             break;
     }
+    
+    if (this->getPowerup() != NULL)
+    {
+        this->getPowerupLabel()->setString(this->getPowerup()->getPowerupName()->getCString());
+    }
+    
     this->setColor(color);
 }

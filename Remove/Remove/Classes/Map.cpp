@@ -9,6 +9,9 @@
 #include "Map.h"
 #include "Constants.h"
 #include "GameLogic.h"
+#include "PowerupA.h"
+#include "PowerupB.h"
+#include "PowerupC.h"
 
 
 Map::Map()
@@ -140,10 +143,11 @@ void Map::removeBlocks(cocos2d::CCArray *blocks)
     {
         Block *block = (Block*)pObj;
         block->setBlockType(m_BlockTypeEmpty);
+        block->setPowerup(NULL);
         block->updateView();
     }
     this->compressTheMap();
-    this->fullFillMap(0);
+    this->fullFillMap(blocks->count());
 }
 
 void Map::compressTheMap()
@@ -195,6 +199,40 @@ void Map::fullFillMap(int removedBlockCount)
             }
         }
     }
+    
+    CCPoint randomPosition = ccp(0, 0);
+    if (removedBlockCount >= 5)
+    {
+        do {
+            randomPosition.x = (int)(CCRANDOM_0_1() * MAP_WIDTH);
+            randomPosition.y = (int)(CCRANDOM_0_1() * MAP_HEIGHT);
+        } while (this->getBlockByPosition(randomPosition.x, randomPosition.y)->getPowerup() != NULL);
+        
+    }
+    
+    if (removedBlockCount >= 5 && removedBlockCount < 8)
+    {
+        this->getBlockByPosition(randomPosition.x, randomPosition.y)->setBlockType(m_BlockTypePowerup);
+        PowerupA *powerup = PowerupA::create();
+        this->getBlockByPosition(randomPosition.x, randomPosition.y)->setPowerup(powerup);
+        
+        // Powerup A
+    }
+    else if (removedBlockCount >= 8 && removedBlockCount < 12)
+    {
+        this->getBlockByPosition(randomPosition.x, randomPosition.y)->setBlockType(m_BlockTypePowerup);
+        PowerupB *powerup = PowerupB::create();
+        this->getBlockByPosition(randomPosition.x, randomPosition.y)->setPowerup(powerup);
+        // Powerup B
+    }
+    else if (removedBlockCount >= 12)
+    {
+        this->getBlockByPosition(randomPosition.x, randomPosition.y)->setBlockType(m_BlockTypePowerup);
+        PowerupC *powerup = PowerupC::create();
+        this->getBlockByPosition(randomPosition.x, randomPosition.y)->setPowerup(powerup);
+        // Powerup C
+    }
+    
     this->updateMap();
 }
 
@@ -209,7 +247,8 @@ CCArray *Map::findNearbyBlocks(int x, int y, Block *targetBlock)
     
     block->setTouched(true);
     
-    if (block->getBlockType() == targetBlock->getBlockType())
+    if (block->getBlockType() == targetBlock->getBlockType()
+        || block->getPowerup() != NULL)
     {
         returnArray->addObject(block);
         

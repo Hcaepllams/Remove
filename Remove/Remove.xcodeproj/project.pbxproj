@@ -206,6 +206,9 @@
 		BE996E3117C4C0710043BF95 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE996E3017C4C0710043BF95 /* HelloWorldScene.cpp */; };
 		BE996E3917C4C1A10043BF95 /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE996E3717C4C1A10043BF95 /* Block.cpp */; };
 		BE996E3C17C4C4270043BF95 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE996E3A17C4C4260043BF95 /* Map.cpp */; };
+		BEF25C6917C5B02200DF1D91 /* PowerupA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEF25C6717C5B02200DF1D91 /* PowerupA.cpp */; };
+		BEF25C6C17C5B0DE00DF1D91 /* PowerupB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEF25C6A17C5B0DE00DF1D91 /* PowerupB.cpp */; };
+		BEF25C6F17C5B0EA00DF1D91 /* PowerupC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEF25C6D17C5B0EA00DF1D91 /* PowerupC.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -646,6 +649,13 @@
 		BE996E3817C4C1A10043BF95 /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Block.h; path = Classes/Block.h; sourceTree = "<group>"; };
 		BE996E3A17C4C4260043BF95 /* Map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Map.cpp; path = Classes/Map.cpp; sourceTree = "<group>"; };
 		BE996E3B17C4C4260043BF95 /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Map.h; path = Classes/Map.h; sourceTree = "<group>"; };
+		BEF25C6517C5AF8800DF1D91 /* PowerupInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerupInterface.h; path = Classes/Powerups/PowerupInterface.h; sourceTree = "<group>"; };
+		BEF25C6717C5B02200DF1D91 /* PowerupA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PowerupA.cpp; path = Classes/Powerups/PowerupA.cpp; sourceTree = "<group>"; };
+		BEF25C6817C5B02200DF1D91 /* PowerupA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerupA.h; path = Classes/Powerups/PowerupA.h; sourceTree = "<group>"; };
+		BEF25C6A17C5B0DE00DF1D91 /* PowerupB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PowerupB.cpp; path = Classes/Powerups/PowerupB.cpp; sourceTree = "<group>"; };
+		BEF25C6B17C5B0DE00DF1D91 /* PowerupB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerupB.h; path = Classes/Powerups/PowerupB.h; sourceTree = "<group>"; };
+		BEF25C6D17C5B0EA00DF1D91 /* PowerupC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PowerupC.cpp; path = Classes/Powerups/PowerupC.cpp; sourceTree = "<group>"; };
+		BEF25C6E17C5B0EA00DF1D91 /* PowerupC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerupC.h; path = Classes/Powerups/PowerupC.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1527,6 +1537,7 @@
 		BE996E2B17C4C0700043BF95 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BEF25C6317C5AF6D00DF1D91 /* Powerups */,
 				BE996E3717C4C1A10043BF95 /* Block.cpp */,
 				BE996E3817C4C1A10043BF95 /* Block.h */,
 				BE996E2C17C4C0700043BF95 /* AppDelegate.h */,
@@ -1541,6 +1552,20 @@
 				2F3DCE0917C4F92C00A6D8FF /* Constants.h */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		BEF25C6317C5AF6D00DF1D91 /* Powerups */ = {
+			isa = PBXGroup;
+			children = (
+				BEF25C6517C5AF8800DF1D91 /* PowerupInterface.h */,
+				BEF25C6717C5B02200DF1D91 /* PowerupA.cpp */,
+				BEF25C6817C5B02200DF1D91 /* PowerupA.h */,
+				BEF25C6A17C5B0DE00DF1D91 /* PowerupB.cpp */,
+				BEF25C6B17C5B0DE00DF1D91 /* PowerupB.h */,
+				BEF25C6D17C5B0EA00DF1D91 /* PowerupC.cpp */,
+				BEF25C6E17C5B0EA00DF1D91 /* PowerupC.h */,
+			);
+			name = Powerups;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1793,6 +1818,9 @@
 				BE996E3C17C4C4270043BF95 /* Map.cpp in Sources */,
 				2F3DCE0517C4F22900A6D8FF /* GameLogic.cpp in Sources */,
 				2F3DCE0A17C4F92C00A6D8FF /* Constants.cpp in Sources */,
+				BEF25C6917C5B02200DF1D91 /* PowerupA.cpp in Sources */,
+				BEF25C6C17C5B0DE00DF1D91 /* PowerupB.cpp in Sources */,
+				BEF25C6F17C5B0EA00DF1D91 /* PowerupC.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
