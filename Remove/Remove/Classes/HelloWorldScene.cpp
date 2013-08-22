@@ -30,6 +30,8 @@ bool HelloWorld::init()
     {
         return false;
     }
+    
+    srand(time(NULL));    
 
     Map *map = Map::create();
     this->addChild(map);
