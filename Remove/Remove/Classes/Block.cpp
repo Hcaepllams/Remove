@@ -18,6 +18,7 @@ Block::Block()
 ,m_bTouched(false)
 ,m_pPowerupLabel(NULL)
 ,m_pPowerup(NULL)
+,m_eBlockStatus(m_BlockStatusNormal)
 {
     
 }
@@ -109,5 +110,17 @@ void Block::updateView()
     if (!this->getPosition().equals(ccp(this->getX() * (BLOCK_WIDTH + GAP_X), this->getY() * (BLOCK_HEIGHT + GAP_Y))))
     {
         this->runAction(CCMoveTo::create(MOVE_ANIM_DURATION, ccp(this->getX() * (BLOCK_WIDTH + GAP_X), this->getY() * (BLOCK_HEIGHT + GAP_Y))));
+    }
+    
+    switch (m_eBlockStatus) {
+        case m_BlockStatusNormal:
+            this->setScale(1.0f);
+            break;
+        case m_BlockStatusSelected:
+            this->setScale(1.2f);
+            break;
+        default:
+            this->setScale(1.0f);
+            break;
     }
 }

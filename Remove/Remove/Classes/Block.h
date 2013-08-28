@@ -27,6 +27,12 @@ typedef enum
     m_BlockTypePowerup
 }enumBlockType;
 
+typedef enum
+{
+    m_BlockStatusNormal = 0,
+    m_BlockStatusSelected = 1
+}enumBlockStatus;
+
 class Block: public CCLayerColor
 {
 public:
@@ -42,6 +48,7 @@ public:
     CC_SYNTHESIZE(int, m_iY, Y);
     
     CC_SYNTHESIZE(enumBlockType, m_eBlockType, BlockType);
+    CC_SYNTHESIZE(enumBlockStatus, m_eBlockStatus, BlockStatus);
     
     CC_SYNTHESIZE(bool, m_bTouched, Touched);// this value is used in removed alogrithm.
     CC_SYNTHESIZE_RETAIN(CCLabelTTF*, m_pPowerupLabel, PowerupLabel);

@@ -140,6 +140,36 @@ bool Map::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
     return true;
 }
 
+void Map::ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
+{
+    CCPoint point = pTouch->getLocation();
+    
+    if (point.x >= (MAP_WIDTH * (BLOCK_WIDTH + GAP_X) - GAP_X) ||
+        point.y >= (MAP_HEIGHT * (BLOCK_HEIGHT + GAP_Y) - GAP_Y))
+    {
+        return;
+    }
+    
+    int x = point.x / (BLOCK_WIDTH + GAP_X);
+    if ((int)point.x % (BLOCK_WIDTH + GAP_X) > BLOCK_WIDTH)
+    {
+        return;
+    }
+    
+    int y = point.y / (BLOCK_HEIGHT + GAP_Y);
+    if ((int)point.y % (BLOCK_HEIGHT + GAP_Y) > BLOCK_HEIGHT)
+    {
+        return;
+    }
+    
+    GameLogic::sharedInstance()->onBlockTouched(x, y);
+}
+
+void Map::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
+{
+    GameLogic::sharedInstance()->onStreakEnded();
+}
+
 void Map::removeBlocks(cocos2d::CCArray *blocks)
 {
     CCObject *pObj = NULL;
@@ -186,79 +216,10 @@ void Map::compressTheMap()
         ++x;
     }
     this->updateMap();
-//    // now remove all all empty block;
-//    pObjArray = NULL;
-//    CCARRAY_FOREACH(m_pXArray, pObjArray)
-//    {
-//        CCArray *pYArray = (CCArray*) pObjArray;
-//        if (pYArray->count() > MAP_HEIGHT)
-//            // there are some empty block at the end of the arry
-//        {
-//            while (pYArray->count() > MAP_HEIGHT)
-//            {
-//                pYArray->removeLastObject();
-//            }
-//        }
-//    }
 }
 
 void Map::fullFillMap(int removedBlockCount)
 {
-    
-    /***
-    CCObject *pObjArray = NULL;
-       
-    // Now fill the empty block with a new color
-    CCARRAY_FOREACH(m_pXArray, pObjArray)
-    {
-        CCArray *pYArray = (CCArray*) pObjArray;
-        CCObject *pObjBlock = NULL;
-        CCARRAY_FOREACH(pYArray, pObjBlock)
-        {
-            Block *block = (Block*)pObjBlock;
-            if (block->getBlockType() == m_BlockTypeEmpty)
-            {
-                int color = CCRANDOM_0_1() * 10 / 2 + 1;
-                block->setBlockType((enumBlockType) color);
-            }
-        }
-    }
-    
-    CCPoint randomPosition = ccp(0, 0);
-    if (removedBlockCount >= 5)
-    {
-        do {
-            randomPosition.x = (int)(CCRANDOM_0_1() * MAP_WIDTH);
-            randomPosition.y = (int)(CCRANDOM_0_1() * MAP_HEIGHT);
-        } while (this->getBlockByPosition(randomPosition.x, randomPosition.y)->getPowerup() != NULL);
-    }
-    
-    if (removedBlockCount >= 5 && removedBlockCount < 8)
-    {
-        this->getBlockByPosition(randomPosition.x, randomPosition.y)->setBlockType(m_BlockTypePowerup);
-        PowerupA *powerup = PowerupA::create();
-        this->getBlockByPosition(randomPosition.x, randomPosition.y)->setPowerup(powerup);
-        
-        // Powerup A
-    }
-    else if (removedBlockCount >= 8 && removedBlockCount < 12)
-    {
-        this->getBlockByPosition(randomPosition.x, randomPosition.y)->setBlockType(m_BlockTypePowerup);
-        PowerupB *powerup = PowerupB::create();
-        this->getBlockByPosition(randomPosition.x, randomPosition.y)->setPowerup(powerup);
-        // Powerup B
-    }
-    else if (removedBlockCount >= 12)
-    {
-        this->getBlockByPosition(randomPosition.x, randomPosition.y)->setBlockType(m_BlockTypePowerup);
-        PowerupC *powerup = PowerupC::create();
-        this->getBlockByPosition(randomPosition.x, randomPosition.y)->setPowerup(powerup);
-        // Powerup C
-    }
-    
-    this->updateMap();
-     */
-    
     CCObject *pObjArray = NULL;
     
     // Now fill the block with equal count of empty blocks with a new color

@@ -28,6 +28,7 @@ public:
     void init();
     
     void onBlockTouched(int x, int y);
+    void onStreakEnded();
     
     void restartGame();
     
@@ -37,6 +38,8 @@ protected:
     CC_SYNTHESIZE_RETAIN(Map*, m_pMap, Map);
     CC_SYNTHESIZE_RETAIN(CCLabelTTF*, m_pScoreLabel, ScoreLabel)
     CC_SYNTHESIZE_RETAIN(CCMenuItem*, m_pRestartButton, RestartButton);
+    
+    CC_SYNTHESIZE_RETAIN(CCArray*, m_pOneStreakArray, OneStreakArray);
 };
 
 #endif /* defined(__Remove__GameLogic__) */

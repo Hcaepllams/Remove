@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Remove/Classes/Map.cpp"
-         timestampString = "398852163.025805"
+         timestampString = "399370866.695859"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "156"
-         endingLineNumber = "156"
+         startingLineNumber = "186"
+         endingLineNumber = "186"
          landmarkName = "Map::removeBlocks(cocos2d::CCArray *blocks)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Remove/Classes/Map.cpp"
-         timestampString = "398852163.025805"
+         timestampString = "399370866.695859"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "266"
-         endingLineNumber = "266"
+         startingLineNumber = "227"
+         endingLineNumber = "227"
          landmarkName = "Map::fullFillMap(int removedBlockCount)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Remove/Classes/Map.cpp"
-         timestampString = "398852163.025805"
+         timestampString = "399370866.695859"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "267"
-         endingLineNumber = "267"
+         startingLineNumber = "228"
+         endingLineNumber = "228"
          landmarkName = "Map::fullFillMap(int removedBlockCount)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Remove/Classes/Block.cpp"
-         timestampString = "398850384.348416"
+         timestampString = "399370866.695859"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "45"
-         endingLineNumber = "45"
+         startingLineNumber = "46"
+         endingLineNumber = "46"
          landmarkName = "Block::init(int x, int y, enumBlockType type)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Remove/Classes/Map.cpp"
-         timestampString = "398852163.025805"
+         timestampString = "399370866.695859"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "277"
-         endingLineNumber = "277"
+         startingLineNumber = "238"
+         endingLineNumber = "238"
          landmarkName = "Map::fullFillMap(int removedBlockCount)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,12 +112,38 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Remove/Classes/Map.cpp"
-         timestampString = "398852163.025805"
+         timestampString = "399370866.695859"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "292"
-         endingLineNumber = "292"
+         startingLineNumber = "253"
+         endingLineNumber = "253"
          landmarkName = "Map::addPowerups(int removedBlockCount)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Remove/Classes/Map.cpp"
+         timestampString = "399372900.832676"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "170"
+         endingLineNumber = "170"
+         landmarkName = "Map::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Remove/Classes/GameLogic.cpp"
+         timestampString = "399373715.315019"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "81"
+         endingLineNumber = "81"
+         landmarkName = "GameLogic::onBlockTouched(int x, int y)"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
